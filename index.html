@@ -1,112 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#05091c" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07101f">
 <title>JetLeague — Khelo Aur Jeeto</title>
 <style>
-:root{--bg:#05091c;--panel:#0b1430;--cyan:#00e5ff;--purple:#b62cff;--text:#f7fbff;--muted:#9ba9c8}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 5%,#092b58 0,transparent 32%),radial-gradient(circle at 90% 20%,#25104a 0,transparent 30%),var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif;min-height:100vh;overflow-x:hidden}
-.wrap{width:min(1120px,92%);margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:20px;letter-spacing:.3px}.brand img{width:44px;height:44px;border-radius:12px;object-fit:cover}.nav a{color:#c7d5f5;text-decoration:none;font-size:14px}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:45px 0 65px}.eyebrow{color:var(--cyan);font-weight:800;letter-spacing:3px;font-size:12px;text-transform:uppercase}.hero h1{font-size:clamp(42px,6vw,76px);line-height:.98;margin:18px 0;font-weight:950;letter-spacing:-3px}.hero h1 span{background:linear-gradient(90deg,#fff,var(--cyan),#bd59ff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:17px;line-height:1.7;max-width:520px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.btn{border:0;border-radius:14px;padding:15px 22px;font-weight:850;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;transition:.2s}.primary{color:#00111b;background:linear-gradient(100deg,#00e5ff,#64f6dc);box-shadow:0 8px 30px #00e5ff30}.secondary{color:white;border:1px solid #263b68;background:#101b3b}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.note{font-size:12px!important;color:#7284aa!important}
-.visual{position:relative;display:grid;place-items:center}.logo-card{width:min(100%,430px);aspect-ratio:1;border-radius:32px;background:linear-gradient(145deg,#08142f,#030716);border:1px solid #174a78;box-shadow:0 0 70px #00d9ff22, inset 0 0 40px #102c59;display:grid;place-items:center;overflow:hidden;position:relative}.logo-card:before{content:"";position:absolute;inset:12px;border:1px solid #00e5ff50;border-radius:25px}.logo-card img{width:88%;border-radius:24px;position:relative;box-shadow:0 0 50px #00e5ff20}.floating{position:absolute;right:-4%;bottom:8%;background:#101b3b;border:1px solid #25416e;padding:14px 18px;border-radius:15px;box-shadow:0 15px 45px #0008;font-weight:800}.floating small{display:block;color:var(--cyan);font-size:11px;letter-spacing:1px;margin-bottom:5px}
-.section{padding:35px 0 70px}.section h2{text-align:center;font-size:30px;margin:0 0 12px}.sub{text-align:center;color:var(--muted);margin:0 0 32px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(160deg,#0e1a3b,#080e24);border:1px solid #1b3158;border-radius:20px;padding:23px}.icon{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:#00dfff16;color:var(--cyan);font-size:22px;margin-bottom:15px}.card h3{margin:0 0 8px}.card p{color:var(--muted);line-height:1.6;font-size:14px;margin:0}
-.download-panel{max-width:760px;margin:0 auto;background:linear-gradient(145deg,#101b3b,#080e24);border:1px solid #21416b;border-radius:24px;padding:28px;text-align:center;box-shadow:0 20px 70px #0003}.download-panel h2{margin:0 0 8px}.download-panel p{color:var(--muted)}.progress-wrap{height:8px;background:#1b2b4c;border-radius:99px;overflow:hidden;margin:20px 0 10px;display:none}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:width .15s}.status{font-size:13px;color:#a8badc;min-height:20px}.footer{border-top:1px solid #142447;padding:24px 0;color:#7384a8;font-size:13px;text-align:center}
-@media(max-width:760px){.hero{grid-template-columns:1fr;text-align:center;padding-top:25px}.hero p{margin:auto}.actions{justify-content:center}.visual{margin:10px 0 25px}.logo-card{width:min(85%,360px)}.floating{right:2%}.cards{grid-template-columns:1fr}.hero h1{letter-spacing:-2px}.nav a{display:none}}
+:root{--bg:#07101f;--panel:#0d1a2d;--line:#20334d;--text:#f4f8ff;--muted:#9eafc7;--green:#b8ff54;--blue:#55d7ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 75% 0%,#16385b55,transparent 45%),radial-gradient(ellipse at 0% 65%,#173a2750,transparent 35%);z-index:-1}
+.container{width:min(1120px,92%);margin:auto}.top{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0c}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.5px;font-size:20px}.brand img{width:42px;height:42px;border-radius:12px;object-fit:cover}.brand b{color:var(--green)}
+.navright{display:flex;align-items:center;gap:22px}.navright a{color:#c4d2e7;text-decoration:none;font-size:14px}.navright .navbtn{border:1px solid #314762;border-radius:10px;padding:10px 14px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px;padding:75px 0 82px}
+.tag{display:inline-flex;gap:8px;align-items:center;border:1px solid #39543b;background:#13251a;color:#d7ffad;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:700}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+h1{font-size:clamp(48px,7vw,82px);line-height:.99;letter-spacing:-5px;margin:22px 0 18px;font-weight:950}h1 span{color:var(--green)}.lead{font-size:17px;color:var(--muted);line-height:1.75;max-width:510px}.cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:28px 0 17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;border-radius:12px;text-decoration:none;font-weight:850;font-size:15px;transition:.2s;cursor:pointer;border:0}
+.btn-main{background:var(--green);color:#14200b;box-shadow:0 9px 25px #b8ff5420}.btn-main:hover{transform:translateY(-2px);box-shadow:0 12px 35px #b8ff5435}.btn-ghost{color:#dbe8f7;border:1px solid #30445d;background:#0b1729}.small{font-size:12px;color:#71849e;display:flex;align-items:center;gap:8px}
+.art{position:relative;min-height:420px;display:grid;place-items:center}.ring{position:absolute;width:380px;height:380px;border:1px solid #35516a;border-radius:50%;box-shadow:0 0 0 35px #ffffff03,0 0 0 75px #ffffff02}.logoFrame{width:min(330px,80%);aspect-ratio:1;position:relative;border-radius:28px;background:linear-gradient(145deg,#142941,#081322);border:1px solid #36516c;padding:15px;box-shadow:0 25px 80px #0008,0 0 50px #58d9ff12;transform:rotate(-3deg)}.logoFrame img{width:100%;height:100%;object-fit:cover;border-radius:18px}.float{position:absolute;border:1px solid #2e455e;background:#102035;padding:13px 16px;border-radius:13px;box-shadow:0 15px 45px #0005;font-size:13px;font-weight:800}.float span{display:block;color:var(--green);font-size:10px;letter-spacing:1.5px;margin-bottom:5px}.f1{top:35px;right:0}.f2{bottom:38px;left:0}
+.section{padding:25px 0 72px}.sectionhead{text-align:center;margin-bottom:30px}.sectionhead h2{font-size:32px;letter-spacing:-1.5px;margin:0 0 10px}.sectionhead p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{border:1px solid var(--line);background:linear-gradient(145deg,#0e1c30,#0a1424);padding:24px;border-radius:18px}.feature .ico{width:43px;height:43px;border-radius:12px;background:#b8ff5412;color:var(--green);display:grid;place-items:center;font-size:21px;margin-bottom:16px}.feature h3{margin:0 0 9px;font-size:17px}.feature p{margin:0;color:var(--muted);font-size:14px;line-height:1.65}
+.download{max-width:760px;margin:auto;border:1px solid #354d62;border-radius:22px;background:linear-gradient(145deg,#12253b,#0b1728);padding:34px;text-align:center;box-shadow:0 25px 80px #0003}.download .mini{color:var(--green);letter-spacing:2px;font-size:11px;font-weight:900}.download h2{font-size:35px;letter-spacing:-1.5px;margin:12px 0 8px}.download p{color:var(--muted);margin:0 0 23px}.download .btn{min-width:235px}.meta{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;color:#7e91ab;font-size:12px;margin-top:19px}.meta span{display:flex;align-items:center;gap:6px}.status{font-size:13px;color:#9fb0c9;min-height:20px;margin-top:12px}.progress{height:5px;background:#263a50;border-radius:99px;overflow:hidden;margin:15px auto 0;max-width:300px;display:none}.bar{height:100%;width:0;background:var(--green);transition:width .15s}
+footer{border-top:1px solid #ffffff10;padding:24px 0;color:#70839d;font-size:13px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.foot a{color:#a7bbd3;text-decoration:none}
+@media(max-width:760px){.navright a:not(.navbtn){display:none}.hero{grid-template-columns:1fr;text-align:center;padding:50px 0 45px;gap:20px}.lead{margin:auto}.cta{justify-content:center}.small{justify-content:center}.art{min-height:350px}.ring{width:290px;height:290px}.logoFrame{width:250px}.f1{right:2%;top:12px}.f2{left:2%;bottom:10px}.grid{grid-template-columns:1fr}.sectionhead h2{font-size:27px}h1{letter-spacing:-3px}.download{padding:27px 18px}.download h2{font-size:29px}.foot{justify-content:center;text-align:center}}
 </style>
 </head>
 <body>
-<header class="wrap nav">
-  <div class="brand"><img src="logo.png" alt="JetLeague logo"> JetLeague</div>
-  <a href="#download">GET THE APP ↓</a>
+<header class="container top">
+ <div class="brand"><img src="logo.png" alt="JetLeague logo"><span>JET<b>LEAGUE</b></span></div>
+ <nav class="navright"><a href="#features">Features</a><a href="#download">Download</a><a class="navbtn" href="#download">Get the app ↗</a></nav>
 </header>
 <main>
-<section class="wrap hero">
-  <div>
-    <div class="eyebrow">Gaming • Tournaments • Community</div>
-    <h1>Play hard.<br><span>Win big.</span></h1>
-    <p>Welcome to JetLeague — compete in your favorite games, join tournaments, and climb the leaderboard. Your next victory starts here.</p>
-    <div class="actions">
-      <a class="btn primary" href="#download">⬇ Download App</a>
-      <a class="btn secondary" href="#features">Explore Features</a>
-    </div>
-    <p class="note">Android app • Download link can be updated anytime</p>
-  </div>
-  <div class="visual">
-    <div class="logo-card"><img src="logo.png" alt="JetLeague — Khelo Aur Jeeto"></div>
-    <div class="floating"><small>YOUR NEXT MATCH</small>Starts here ⚡</div>
-  </div>
+<section class="container hero">
+ <div>
+  <div class="tag"><i class="dot"></i> GAMING • TOURNAMENTS • COMMUNITY</div>
+  <h1>Enter the<br><span>arena.</span></h1>
+  <p class="lead">Your game. Your squad. Your moment. Join the JetLeague community, compete in tournaments and make every match count.</p>
+  <div class="cta"><a class="btn btn-main" href="#download">⬇ Download JetLeague</a><a class="btn btn-ghost" href="#features">Explore features ↘</a></div>
+  <div class="small">◉ Android app &nbsp; • &nbsp; Quick install &nbsp; • &nbsp; Khelo Aur Jeeto</div>
+ </div>
+ <div class="art"><div class="ring"></div><div class="logoFrame"><img src="logo.png" alt="JetLeague Khelo Aur Jeeto"></div><div class="float f1"><span>READY PLAYER?</span>Let's compete ⚡</div><div class="float f2"><span>THE NEXT WIN</span>Could be yours 🏆</div></div>
 </section>
-<section class="wrap section" id="features">
-  <h2>One arena. Endless action.</h2><p class="sub">Everything you need to compete.</p>
-  <div class="cards">
-    <article class="card"><div class="icon">🏆</div><h3>Join Tournaments</h3><p>Discover competitions and enter your favorite gaming tournaments.</p></article>
-    <article class="card"><div class="icon">🎮</div><h3>Compete & Play</h3><p>Bring your skills, challenge other players, and make every match count.</p></article>
-    <article class="card"><div class="icon">📈</div><h3>Track Results</h3><p>Stay updated with tournament results and your gaming progress.</p></article>
-  </div>
+<section class="container section" id="features">
+ <div class="sectionhead"><h2>Made for the competition.</h2><p>Everything you need to get into the game.</p></div>
+ <div class="grid">
+  <article class="feature"><div class="ico">🏆</div><h3>Tournaments</h3><p>Explore competitions and find your next challenge in the arena.</p></article>
+  <article class="feature"><div class="ico">🎮</div><h3>Play your way</h3><p>Bring your skills, team up with friends and compete for the win.</p></article>
+  <article class="feature"><div class="ico">📊</div><h3>Match results</h3><p>Keep up with results and follow your tournament journey.</p></article>
+ </div>
 </section>
-<section class="wrap section" id="download">
-  <div class="download-panel">
-    <div class="eyebrow">Ready to enter the arena?</div>
-    <h2>Download JetLeague</h2>
-    <p>Khelo Aur Jeeto</p>
-    <a class="btn primary" id="downloadBtn" href="#" download>⬇ Download for Android</a>
-    <div class="progress-wrap" id="progressWrap"><div class="progress" id="progress"></div></div>
-    <div class="status" id="status">App download link will be added here.</div>
-    <p class="note">If download doesn't start, use the button again or check your browser's downloads.</p>
-  </div>
+<section class="container section" id="download">
+ <div class="download">
+  <div class="mini">YOUR NEXT MATCH STARTS HERE</div><h2>Get JetLeague</h2><p>Khelo Aur Jeeto. Download the Android app and join the action.</p>
+  <a class="btn btn-main" id="downloadBtn" href="https://github.com/officialrkk/download-app/blob/main/JetLeague.apk">⬇ Download APK <span>↗</span></a>
+  <div class="progress" id="progress"><div class="bar" id="bar"></div></div><div class="status" id="status">APK hosted on GitHub • 4.32 MB</div>
+  <div class="meta"><span>✓ Android</span><span>✓ APK file</span><span>✓ GitHub download</span></div>
+ </div>
 </section>
 </main>
-<footer class="footer"><div class="wrap">© <span id="year"></span> JetLeague • Khelo Aur Jeeto</div></footer>
+<footer><div class="container foot"><span>© <span id="year"></span> JetLeague. All rights reserved.</span><span>Khelo Aur Jeeto • <a href="mailto:support@jetleague.site">Support</a></span></div></footer>
 <script>
-/* UPDATE THIS URL when your APK/AAB download URL is ready.
-   Example: const APP_DOWNLOAD_URL = "https://your-domain.com/JetLeague.apk"; */
-const APP_DOWNLOAD_URL = "";
-
-const button = document.getElementById("downloadBtn");
-const statusText = document.getElementById("status");
-const progressWrap = document.getElementById("progressWrap");
-const progress = document.getElementById("progress");
+const APK_URL = "https://github.com/officialrkk/download-app/blob/main/JetLeague.apk";
+const DIRECT_APK_URL = "https://github.com/officialrkk/download-app/raw/refs/heads/main/JetLeague.apk";
 document.getElementById("year").textContent = new Date().getFullYear();
-
-button.addEventListener("click", async (event) => {
-  event.preventDefault();
-  if (!APP_DOWNLOAD_URL.trim()) {
-    statusText.textContent = "Download link abhi add nahi hua. APP_DOWNLOAD_URL update karein.";
-    return;
-  }
-  // Browser download progress can only be shown when the server exposes the file
-  // with CORS access and a readable Content-Length. Otherwise native download starts.
-  statusText.textContent = "Download starting…";
-  progressWrap.style.display = "block";
-  progress.style.width = "8%";
-  try {
-    const response = await fetch(APP_DOWNLOAD_URL, { method: "GET", mode: "cors" });
-    if (!response.ok) throw new Error("Download request failed");
-    const total = Number(response.headers.get("Content-Length")) || 0;
-    if (!response.body || !total) throw new Error("Progress unavailable");
-    const reader = response.body.getReader();
-    const chunks = []; let received = 0;
-    while (true) {
-      const {done, value} = await reader.read();
-      if (done) break;
-      chunks.push(value); received += value.length;
-      progress.style.width = Math.min(100, received / total * 100) + "%";
-      statusText.textContent = `Downloading… ${Math.round(received / total * 100)}%`;
-    }
-    const blob = new Blob(chunks, {type: "application/vnd.android.package-archive"});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a"); a.href = url; a.download = "JetLeague.apk"; a.click();
-    URL.revokeObjectURL(url);
-    progress.style.width = "100%"; statusText.textContent = "Download complete!";
-  } catch (error) {
-    progressWrap.style.display = "none";
-    statusText.textContent = "Starting browser download…";
-    const a = document.createElement("a"); a.href = APP_DOWNLOAD_URL; a.download = "JetLeague.apk";
-    document.body.appendChild(a); a.click(); a.remove();
-  }
-});
+const btn = document.getElementById("downloadBtn"), status = document.getElementById("status");
+btn.href = DIRECT_APK_URL;
+btn.addEventListener("click",()=>{status.textContent="Your APK download is starting. Check your browser downloads.";});
 </script>
 </body>
 </html>
